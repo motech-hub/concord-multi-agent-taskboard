@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "apps/web/src/styles.css"
+        ],
+        "createdAt": "2026-11-03T22:01:52.548Z",
+        "reason": "Agent: progress width is static; only transform is transitioned on this line."
+      }
+    ]
+  }
+}
