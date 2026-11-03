@@ -1,0 +1,29 @@
+{
+  "name": "concord-multi-agent-taskboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A persistent Kanban task board and a documented Concord MCP collaboration experiment.",
+  "workspaces": ["apps/api", "apps/web", "packages/shared"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run build -w @taskboard/shared && npm run dev -w @taskboard/api",
+    "dev:web": "npm run dev -w @taskboard/web",
+    "build": "npm run build -w @taskboard/shared && npm run build -w @taskboard/api && npm run build -w @taskboard/web",
+    "lint": "eslint .",
+    "typecheck": "npm run build -w @taskboard/shared && npm run typecheck -w @taskboard/shared && npm run typecheck -w @taskboard/api && npm run typecheck -w @taskboard/web",
+    "test": "npm run build -w @taskboard/shared && npm run test -w @taskboard/shared && npm run test -w @taskboard/api && npm run test -w @taskboard/web",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.48.1"
+  },
+  "engines": { "node": ">=22.0.0" }
+}

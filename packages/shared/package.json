@@ -1,0 +1,16 @@
+{
+  "name": "@taskboard/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/task.js",
+  "types": "./dist/task.d.ts",
+  "exports": { ".": { "types": "./dist/task.d.ts", "import": "./dist/task.js" } },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": { "zod": "^4.1.12" },
+  "devDependencies": { "vitest": "4.1.10", "typescript": "^5.9.3" }
+}
