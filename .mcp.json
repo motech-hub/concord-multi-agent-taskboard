@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "concord": {
+      "command": "concord-mcp"
+    }
+  }
+}
