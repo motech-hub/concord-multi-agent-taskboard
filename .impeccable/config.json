@@ -10,7 +10,7 @@
           "apps/web/src/styles.css"
         ],
         "createdAt": "2026-11-03T22:01:52.548Z",
-        "reason": "Agent: progress width is static; only transform is transitioned on this line."
+        "reason": "Codex triage: line 60 animates only transform; width and height are static sizing declarations, so the layout-transition report is a false positive."
       }
     ]
   }
