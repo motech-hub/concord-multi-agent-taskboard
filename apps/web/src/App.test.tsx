@@ -73,7 +73,7 @@ describe('AI Task Board', () => {
     const user = userEvent.setup();
     renderApp();
     await screen.findByText('Ship the onboarding flow');
-    await user.click(screen.getByRole('button', { name: /new task/i }));
+    await user.click(screen.getByRole('button', { name: 'Add task to To do' }));
     const dialog = screen.getByRole('dialog', { name: /new task/i });
     await user.type(within(dialog).getByLabelText(/title/i), 'Prepare release notes');
     await user.selectOptions(within(dialog).getByLabelText(/status/i), 'TODO');
