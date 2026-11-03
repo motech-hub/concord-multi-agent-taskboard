@@ -112,7 +112,7 @@ function App() {
           </div>
           <div className="focus-progress" aria-label={`${stats.done} of ${stats.total} tasks complete`}>
             <div className="focus-progress-copy"><strong>{stats.done} <span>of {stats.total}</span></strong><span>tasks complete</span></div>
-            <div className="progress-track"><div className="progress-fill" style={{ width: `${stats.total ? Math.min(100, stats.done / stats.total * 100) : 0}%` }} /></div>
+            <div className="progress-track"><div className="progress-fill" style={{ transform: `scaleX(${stats.total ? Math.min(1, stats.done / stats.total) : 0})` }} /></div>
           </div>
           <div className="focus-complete"><Check size={16} /> Keep your momentum</div>
         </section>
